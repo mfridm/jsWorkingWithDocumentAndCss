@@ -24,29 +24,29 @@ const movieDB = {
     ]
 };
 
-let {movies} = movieDB;
-movies.sort(sortArr);
+let {movies} = movieDB; // пишем в мувис содержимое мувиДБ.мувис
+movies.sort(sortArr); // сортируем
 
-function sortArr(a,b){
+function sortArr(a,b){ // фукция сортировки по алфавиту
     return a-b;
 }
 
-let counter = 0;
-let index = 1;
-for(let key of movieDB.movies){
-       if(key){ 
-        document.getElementsByClassName('promo__interactive-item')[counter].innerHTML= `${index} - ${key}`;
+let counter = 0; // создали каунтер для счетчика элементов массива
+let index = 1; // создали счетчик для списка фильмов
+for(let key of movieDB.movies){ // ОФ, создаем Кей и в него пихаем по порядку все что есть мувис
+       if(key){ // если кей - Логан
+        document.getElementsByClassName('promo__interactive-item')[counter].innerHTML= `${index} - ${key}`; // меняем элемент массива под номером таким-то на номер фильма + логан
         }
-         counter++;
-         index++;
+         counter++; // добавили к каунтеру единичку
+         index++;// добавили к индексу единичку
 }
 
-const promoAdv = document.getElementsByClassName('promo__adv');
-promoAdv[0].remove();
+const promoAdv = document.getElementsByClassName('promo__adv'); // нашли по классу нужный див, сунули его как массив в переменную
+promoAdv[0].remove(); // в массиве удалили первый элемент
 
-const ganreFilma = document.getElementsByClassName("promo__genre");
-ganreFilma[0].innerHTML = "Drama";
+const ganreFilma = document.getElementsByClassName("promo__genre");// нашли по классу нужный див, сунули его как массив в переменную
+ganreFilma[0].innerHTML = "Drama"; // в массиве первый элемент заменили внутренность дива на Драма
 
-const bg = document.getElementsByClassName('promo__bg');
-bg[0].style.background = 'url("../img/bg.jpg")';
+const bg = document.getElementsByClassName('promo__bg');// нашли по классу нужный див, сунули его как массив в переменную
+bg[0].style.background = 'url("../img/bg.jpg")'; // залезли в первый элемент массива бг в стили и сменили в бекграунде урл
 
